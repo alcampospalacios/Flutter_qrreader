@@ -1,6 +1,8 @@
 # qrreader
 
-A new Flutter project.
+-Scanner qr
+-Database sql interaction
+-Maps
 
 ## Getting Started
 
