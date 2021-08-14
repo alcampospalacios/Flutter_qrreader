@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:qrreader/src/core/providers/selected_index_provider.dart';
 import 'package:qrreader/src/routes/routes.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,10 +11,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
 
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData.light(),
-        initialRoute: '/',
-        routes: getApplicationRoutes());
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => new SelectedIndexProvider())
+      ],
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+              primaryColor: Colors.deepPurple,
+              floatingActionButtonTheme: FloatingActionButtonThemeData(
+                  backgroundColor: Colors.deepPurple)),
+          initialRoute: '/',
+          routes: getApplicationRoutes()),
+    );
   }
 }

@@ -5,8 +5,8 @@ class MapsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: null,
+    return Center(
+      child: Text('hello world'),
     );
   }
 }
