@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:qrreader/src/core/providers/scan_provider.dart';
 import 'package:qrreader/src/core/providers/selected_index_provider.dart';
 import 'package:qrreader/src/routes/routes.dart';
 
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => new SelectedIndexProvider())
+        ChangeNotifierProvider(create: (_) => new SelectedIndexProvider()),
+        ChangeNotifierProvider(create: (_) => new ScanProvider())
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,

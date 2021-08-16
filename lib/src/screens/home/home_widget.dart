@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:qrreader/src/core/helpers/acp_url_launcher.dart';
+import 'package:qrreader/src/core/providers/scan_provider.dart';
 
 import 'package:qrreader/src/core/providers/selected_index_provider.dart';
+import 'package:qrreader/src/models/scan_model.dart';
 
 class CustomNavegationBar extends StatelessWidget {
   const CustomNavegationBar({Key? key}) : super(key: key);
@@ -40,7 +43,13 @@ class ScanButton extends StatelessWidget {
         //     '#3D8BEF', 'Cancelar', false, ScanMode.QR);
 
         // to simulator
-        String barcodeScanRes = 'https://www.linkedin.com/in/alcampospalacios/';
+        // String barcodeScanRes = 'https://www.linkedin.com/in/alcampospalacios/';
+        String barcodeScanRes = 'geo: 46.280089,-75.922405';
+        if (barcodeScanRes == '-1') return;
+
+        final scanProvider = Provider.of<ScanProvider>(context, listen: false);
+        ScanModel scan = await scanProvider.newScan(barcodeScanRes);
+        launchURL(context, scan);
       },
       child: Icon(Icons.filter_center_focus),
     );
