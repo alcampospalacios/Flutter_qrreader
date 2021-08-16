@@ -12,25 +12,29 @@ class MapGoogleScreen extends StatefulWidget {
 }
 
 class _MapGoogleScreenState extends State<MapGoogleScreen> {
-  Completer<GoogleMapController> _controller = Completer();
+  // Completer<GoogleMapController> _controller = Completer();
 
   @override
   Widget build(BuildContext context) {
-    final CameraPosition _initialBreakPoint = CameraPosition(
-      target: LatLng(37.42796133580664, -122.085749655962),
-      zoom: 14.4746,
-    );
+    // final CameraPosition _initialBreakPoint = CameraPosition(
+    //   target: LatLng(37.42796133580664, -122.085749655962),
+    //   zoom: 14.4746,
+    // );
 
     final ScanModel scan =
         ModalRoute.of(context)!.settings.arguments as ScanModel;
     return Scaffold(
-      body: GoogleMap(
-        mapType: MapType.hybrid,
-        initialCameraPosition: _initialBreakPoint,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
-      ),
-    );
+        body: Center(
+      child: Text('Map here'),
+    ));
   }
 }
+
+// the map
+// GoogleMap(
+//         mapType: MapType.hybrid,
+//         initialCameraPosition: _initialBreakPoint,
+//         onMapCreated: (GoogleMapController controller) {
+//           _controller.complete(controller);
+//         },
+//       ),
