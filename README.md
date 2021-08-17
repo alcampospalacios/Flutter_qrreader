@@ -1,18 +1,12 @@
-# qrreader
+# qrreader app
 
--Scanner qr
--Database sql interaction
--Maps
+*Lector de qr con enlaces http o mapas
+  *Base de datos sqflite
+  *Mapas con leaflet pluging
+  *Providers
+  *Librerias de barcode scan flutter
 
-## Getting Started
+## Ejemplo app
 
-This project is a starting point for a Flutter application.
+***![Screenshot_2021-08-16-23-04-57](https://user-images.githubusercontent.com/54634181/129658713-f9359cd5-ef21-4cba-a62d-403972f9e6f5.png)![Screenshot_2021-08-16-23-16-57](https://user-images.githubusercontent.com/54634181/129658739-19366781-2f8a-40e7-887a-8a67a52439d9.png)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
