@@ -10,10 +10,14 @@ class ACPListBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scanProvider = Provider.of<ScanProvider>(context);
-
     // To avoid a infinite loop, when the notifylistener on provider is fired draw al build method of subscribed widgets
-    if (scanProvider.scans.isNotEmpty && scanProvider.scans.first.type != type)
+    if (scanProvider.scans.length > 0 &&
+        scanProvider.scans.first.type != type) {
+      print('typee: $type');
       scanProvider.loadScansByType(type);
+    } else if (scanProvider.scans.length == 0) {
+      scanProvider.loadScansByType(type);
+    }
 
     final scans = scanProvider.scans;
 

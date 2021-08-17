@@ -39,12 +39,12 @@ class ScanButton extends StatelessWidget {
     return FloatingActionButton(
       elevation: 0,
       onPressed: () async {
-        // String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-        //     '#3D8BEF', 'Cancelar', false, ScanMode.QR);
+        String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
+            '#3D8BEF', 'Cancelar', false, ScanMode.QR);
 
         // to simulator
         // String barcodeScanRes = 'https://www.linkedin.com/in/alcampospalacios/';
-        String barcodeScanRes = 'geo: 46.280089,-75.922405';
+        // String barcodeScanRes = 'geo:23.13302 ,-82.38304';
         if (barcodeScanRes == '-1') return;
 
         final scanProvider = Provider.of<ScanProvider>(context, listen: false);

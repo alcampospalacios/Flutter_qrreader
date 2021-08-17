@@ -32,11 +32,16 @@ class ScanProvider extends ChangeNotifier {
 
   void loadScansByType(String type) async {
     final sc = await DBProvider.db.getScanByType(type);
+    print('scDB: $sc');
 
     if (sc != null) {
       this.scans = [...sc];
       this._selectedType = type;
-
+      print(sc);
+      notifyListeners();
+    } else {
+      this.scans = [];
+      this._selectedType = type;
       notifyListeners();
     }
   }
