@@ -1,10 +1,6 @@
 # qrreader app
 
-*Lector de qr con enlaces http o mapas
-  *Base de datos sqflite
-  *Mapas con leaflet pluging
-  *Providers
-  *Librerias de barcode scan flutter
+Lector de qr con enlaces http o mapas, Base de datos sqflite, Mapas con leaflet pluging, Providers, Librerias de barcode scan flutter
 
 ## Ejemplo app
 
